@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            background-color: #EBF4F6;
+        }
+        nav {
+            color: rgb(50, 48, 48);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #CAF0F8; /* White background */        
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            font-family: 'Charm';
+            font-weight: 900;
+            font-size: larger;
+        }
+        nav ul li a{
+    cursor: pointer;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    color: #FF0066;
+}
+
+        .get-tickets {
+            background-color: #FF0066;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .get-tickets:hover {
+            background-color: #FF3399;
+        }
+        .search-bar {
+            border-radius: 25px;
+            border: none;
+            padding: 5px 15px;
+            width: 250px;
+        }
+        .header {
+            background: url('https://images.squarespace-cdn.com/content/v1/5423dde2e4b00c40b1ccf4cb/b5ba2efe-21aa-4bc3-80d2-012999f58fd4/IMG_9791_textron_aviation_australasia_customer_conference_2022_novasoma_photography.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            max-height: 1200px;
+        }
+        .header h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        .mySlides {display:none;}
+        .carousel {
+            margin-top: 0px;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 600px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background: #AFD3E2;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .feature {
+            background: #19A7CE;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.event-highlight {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px;
+        background: #cbebfb;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 1200px;
+    }
+
+    .event-highlight .text {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .event-highlight .video {
+        flex: 1;
+        position: relative;
+    }
+
+    .event-highlight img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+        .event-highlight {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .reverse {
+            flex-direction: column;
+        }
+
+        .event-highlight .video,
+        .event-highlight .text {
+            width: 100%;
+        }
+    }
+    /* Event Showcase Section */
+.event-showcase {
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #f4f9fd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Content */
+.text-content {
+    text-align: left;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.text-content h3 {
+    font-size: 22px;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Bullet Points */
+.text-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.text-content ul li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* Register Button */
+.register-btn {
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.register-btn:hover {
+    background: #0056b3;
+}
+.gallery {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.gallery:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.desc {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: #0056b3; /* Blue background */
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.desc:hover {
+    background: #30d1f9; /* Darker blue on hover */
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <h2><b>Event Management Portal</b></h2>
+        <ul>
+            <li>Home</li>
+            <li><a href="event_creation.html">Event Creation</a></li>
+            <li><a href="eventcalendar.html">Events Calendar</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <button class="get-tickets">Get Tickets</button>
+    </nav>
+    <div class="header">
+        <h1>Creative Business Agency Conference 2019</h1>
+        <p>January 24, 2019 | New York, USA</p>
+        <button class="get-tickets">Register Now</button>
+    </div>
+
+
+
+    <div class="event-highlight">
+        <div class="text">
+            <h2>Exciting Event Experience</h2>
+            <p>Join us for an immersive experience featuring industry leaders, networking opportunities, and insightful discussions. Get ready for an unforgettable event!</p>
+            <button class="get-tickets">Learn More</button>
+        </div>
+        <div class="video">
+            <img src="https://i.gifer.com/AYec.gif" alt="Event Video">
+            <i class="fas fa-play play-btn"></i>
+        </div>
+    </div>
+    
+    <div class="event-highlight reverse">
+        <div class="text">
+            <h2>Ignite Your Entrepreneurial Spirit</h2>
+            <p>Gain insights from successful founders, discover new opportunities, and build connections that shape your startup journey.</p>
+            <button class="get-tickets">Learn More</button>
+        </div>
+        <div class="video">
+            <img src="https://www.twilio.com/content/dam/twilio-com/global/en/blog/legacy/2018/gif-ready-signalconf/Animated_GIF-downsized_large-4.gif" alt="Event Video">
+            <i class="fas fa-play play-btn"></i>
+        </div>
+    </div>
+
+    <div class="event-showcase">
+        <div class="text-content">
+            <h2>Experience the Ultimate Industry Event</h2>
+            <p>Get ready to be part of an unforgettable event that brings together visionaries, industry leaders, and innovative minds from across the globe. Whether you're looking to expand your knowledge, network with like-minded professionals, or gain insights from expert speakers, this event is designed to inspire and empower you.</p>
+    
+            <h3>What to Expect?</h3>
+            <ul>
+                <li><strong>Inspiring Keynote Sessions</strong> – Hear from renowned speakers who are shaping the future of technology, business, and creativity.</li>
+                <li><strong>Networking Opportunities</strong> – Connect with industry experts, entrepreneurs, and thought leaders to expand your professional circle.</li>
+                <li><strong>Interactive Panel Discussions</strong> – Engage in insightful conversations about the latest trends and challenges in your field.</li>
+                <li><strong>Hands-on Workshops</strong> – Participate in practical sessions to sharpen your skills and bring innovative ideas to life.</li>
+                <li><strong>Live Demonstrations & Exhibitions</strong> – Explore cutting-edge innovations and witness groundbreaking technologies in action.</li>
+            </ul>
+    
+            <h3>Why You Should Attend?</h3>
+            <ul>
+                <li>Gain valuable knowledge from industry experts.</li>
+                <li>Build meaningful connections that can shape your future.</li>
+                <li>Discover new opportunities for career and business growth.</li>
+                <li>Stay ahead with insights into emerging trends and innovations.</li>
+            </ul>
+    
+            <p>Don’t miss out on this exclusive experience. Be part of something extraordinary and take a step toward a brighter, more connected future.</p>
+            
+            <button class="register-btn">Reserve Your Spot Now</button>
+        </div>
+    </div>
+    
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnR8ZW58MHx8MHx8fDA%3D">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnR8ZW58MHx8MHx8fDA%3D" alt="Concert Event">
+            </a>
+            <div class="desc">🎉 A vibrant concert with an energetic crowd and stunning visuals.</div>
+        </div>
+    </div>
+    
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://st.depositphotos.com/1056393/5165/i/450/depositphotos_51650835-stock-photo-audience-at-the-conference-hall.jpg">
+                <img src="https://st.depositphotos.com/1056393/5165/i/450/depositphotos_51650835-stock-photo-audience-at-the-conference-hall.jpg" alt="Conference">
+            </a>
+            <div class="desc">📢 A packed conference hall with engaging discussions and keynotes.</div>
+        </div>
+    </div>
+    
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://media.istockphoto.com/id/974238866/photo/audience-listens-to-the-lecturer-at-the-conference.jpg?s=612x612&w=0&k=20&c=p_BQCJWRQQtZYnQlOtZMzTjeB_csic8OofTCAKLwT0M=">
+                <img src="https://media.istockphoto.com/id/974238866/photo/audience-listens-to-the-lecturer-at-the-conference.jpg?s=612x612&w=0&k=20&c=p_BQCJWRQQtZYnQlOtZMzTjeB_csic8OofTCAKLwT0M=" alt="Seminar">
+            </a>
+            <div class="desc">🎤 A professional seminar fostering learning and networking.</div>
+        </div>
+    </div>
+    
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://media.istockphoto.com/id/1078027768/photo/doing-business-out-in-the-open.jpg?s=170667a&w=0&k=20&c=ucqBFGo-gQ-4WjhTGORg6hqS2MGHqqRldjFspuXMFrU=">
+                <img src="https://media.istockphoto.com/id/1078027768/photo/doing-business-out-in-the-open.jpg?s=170667a&w=0&k=20&c=ucqBFGo-gQ-4WjhTGORg6hqS2MGHqqRldjFspuXMFrU=" alt="Business Meeting">
+            </a>
+            <div class="desc">🤝 A collaborative outdoor business meeting in a relaxed setting.</div>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    
+    
+      
+</body>
+</html>
